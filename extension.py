@@ -10,6 +10,9 @@ import torch
 from torch import optim
 from torch import relu as relu
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(device)
+
 def make_linsep_GMM(dim, N, var,plot,mu_r_1=None,mu_r_2=None): 
   '''
   This Function generates the gaussian mixtrue models. Set plot = True to inspect the first four dimensions visually. 
